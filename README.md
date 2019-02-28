@@ -1,5 +1,5 @@
 # yue-react-start
-
+> react项目脚手架
 ## useful links
 - [BEM](http://getbem.com/naming/)
 - [React Router 4.x 开发，这些雷区我们都帮你踩过了](https://juejin.im/entry/5b50518bf265da0f6436c34a)
