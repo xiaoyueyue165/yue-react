@@ -1,21 +1,31 @@
 /* 全局样式 */
+
 .app {
   width: 1920px;
 }
+
+.hand:hover {
+  cursor: pointer;
+}
+
 /* 辅助线 */
 
 .red {
   border: 1px solid red;
 }
+
 .yellow {
   border: 1px solid yellow;
 }
+
 .black {
   border: 1px solid #000;
 }
+
 .blue {
   color: #17B1F7 !important;
 }
+
 .pink {
   border: 1px solid pink;
 }
@@ -27,6 +37,7 @@
 .fixed {
   position: fixed;
 }
+
 .green {
   color: #58b530 !important;
 }

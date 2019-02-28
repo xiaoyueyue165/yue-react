@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import signIn from "./views/signIn/signIn";
 import register from "./views/register/register";
 import loginState from "./views/loginState/loginState";
+import Home from "./views/home/home";
 
 
 export default () => {
@@ -14,6 +15,7 @@ export default () => {
         <Route exact path="/signIn" component={signIn} />
         <Route path="/register" component={register} />
         <Route path="/loginState" component={loginState} />
+        <Route path="/Home" component={Home} />
       </React.Fragment>
     </BrowserRouter>
 

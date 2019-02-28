@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router';
 import signIn_img from '../../assets/signIn_img.png';
 import SignInTab from "../../components/signInTab/signInTab";
 import time from '../../assets/icon/signIn_tab1.png';
@@ -13,6 +12,9 @@ class signIn extends Component {
       tab: 0
     })
   }
+  toHome() {
+    this.props.history.push('/home');
+  }
   sendTabIndex(index) {
     this.setState({
       tab: index
@@ -24,18 +26,18 @@ class signIn extends Component {
     return (
       <div className="app">
         <div className="header oneLineBetween">
-          <div className="login_btn">
+          <div className="login_btn hand">
             首润人力资源
           </div>
-          <div className="guo">跳过，先浏览下</div>
+          <div className="guo hand" onClick={this.toHome.bind(this)}>跳过，先浏览下</div>
         </div>
         <div className="bigBg_box">
           <img className="signIn_img" src={signIn_img} />
           <div className="card-container">
 
             <div className="tabNav">
-              <div className={tabIndex === 0 ? 'tab_item active' : 'tab_item'} onClick={() => this.sendTabIndex(0)}>密码登录</div>
-              <div className={tabIndex === 1 ? 'tab_item active' : 'tab_item'} onClick={() => this.sendTabIndex(1)}>验证码登录</div>
+              <div className={tabIndex === 0 ? 'tab_item active hand' : 'tab_item hand'} onClick={() => this.sendTabIndex(0)}>密码登录</div>
+              <div className={tabIndex === 1 ? 'tab_item active hand' : 'tab_item hand'} onClick={() => this.sendTabIndex(1)}>验证码登录</div>
             </div>
             <SignInTab index={tabIndex} />
           </div>

@@ -20,6 +20,9 @@ class loginState extends React.Component {
     sendVscode() {
         alert('发送验证码')
     }
+    toIndex() {
+        this.props.history.push('/')
+    }
 
     render() {
         var parseObj = utils.parseParam(this.props.location.search);
@@ -28,7 +31,7 @@ class loginState extends React.Component {
 
         function ForgetPwd_R() {
 
-            return <div className="mainBox2">
+            return <div className="mainBox">
                 <div className="title">注册</div>
                 <Input className="commonInp" placeholder="请输入手机号" />
                 <img className="commonIcon" src={phone} />
@@ -53,8 +56,8 @@ class loginState extends React.Component {
 
 
         return (
-            <div className="wrapper">
-                <div className="company">首润人力资源</div>
+            <div className="wrapper_loginState">
+                <div className="company hand" onClick={this.toIndex.bind(this)}>首润人力资源</div>
                 <img className='bigBg' src={bigBg} />
                 {forgetPwd === '2true' ? <ForgetPwd_R /> : <Success_R />}
             </div>

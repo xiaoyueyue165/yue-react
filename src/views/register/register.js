@@ -36,6 +36,9 @@ class register extends React.Component {
         this.onChangeSex = this.onChangeSex.bind(this);
         this.onChangeXieyi = this.onChangeXieyi.bind(this);
     }
+    toIndex() {
+        this.props.history.push('/')
+    }
 
     onChangeXieyi(e) {
         console.log(this.state.xieyi)
@@ -58,7 +61,7 @@ class register extends React.Component {
         console.log(IMgProps)
         return (
             <div className="wrapper">
-                <div className="company">首润人力资源</div>
+                <div className="company hand" onClick={this.toIndex.bind(this)}>首润人力资源</div>
                 <div className="rightState">已有账号，<span className="blue"><Link to="/signIn">立即登录</Link></span></div>
                 <img className='bigBg' src={bigBg} />
                 <div className="mainBox">
@@ -138,5 +141,6 @@ class register extends React.Component {
 register.propTypes = {
 
 };
+
 
 export default register;
