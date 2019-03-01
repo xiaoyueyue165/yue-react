@@ -1,0 +1,51 @@
+.homePage {
+  .bigImg {
+    position: relative;
+    height: 640px;
+    .index_qrCode {
+      position: absolute;
+      top: 327px;
+      left: 900px;
+      width: 120px;
+      height: 120px;
+      z-index: 1;
+    }
+  }
+  .Partner {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 120px 360px;
+    height: 826px;
+    background: rgba(255, 255, 255, 1);
+    .title_box {
+      position: relative;
+      height: 65px;
+      width: 440px;
+
+      .bg {
+        width: 440px;
+        height: 65px;
+        text-align:justify;
+        font-size: 84px;
+        font-family: MicrosoftYaHei;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+        line-height: 65px;
+        opacity: 0.12;
+      }
+      .title {
+        position: absolute;
+        left: 150px;
+        top: 0;
+        display: inline-block;
+        height: 32px;
+        font-size: 32px;
+        font-family: MicrosoftYaHei;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+        line-height: 32px;
+      }
+    }
+  }
+}

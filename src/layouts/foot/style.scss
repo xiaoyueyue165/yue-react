@@ -1,0 +1,97 @@
+.foot_wrap {
+    position: relative;
+  height: 622px;
+  .mainLinks {
+    box-sizing: border-box;
+    padding: 80px 360px;
+    height: 542px;
+    background: rgba(40, 40, 40, 1);
+    .title {
+      height: 17px;
+      font-size: 18px;
+      font-family: PingFang-SC-Medium;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 1);
+      line-height: 17px;
+      margin-bottom: 21px;
+    }
+    .line {
+      width: 1200px;
+      height: 1px;
+      background: #9a9a9a;
+      margin-top: 17px;
+    }
+    ul {
+      padding-left: 0;
+      li {
+        float: left;
+        margin-bottom: 23px;
+        margin-right: 46px;
+        a {
+          height: 14px;
+          font-size: 14px;
+          font-family: PingFang-SC-Medium;
+          font-weight: 500;
+          color: rgba(233, 233, 233, 1);
+          line-height: 14px;
+        }
+      }
+    }
+    .com {
+      width: 200px;
+      margin-top: 80px;
+      .row {
+        height: 13px;
+        margin-bottom: 25px;
+        font-size: 16px;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 1);
+        line-height: 13px;
+      }
+    }
+    .qrCode {
+      position: absolute;
+      left: 1080px;
+      top: 307px;
+      width: 300px;
+      height: 147px;
+      .code {
+          height: 100%;
+      }
+      .img {
+        width: 120px;
+        height: 120px;
+        background: #fff;
+      }
+      .intro {
+        height: 15px;
+        font-size: 16px;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color: rgba(233, 233, 233, 1);
+        line-height: 15px;
+      }
+    }
+  }
+  .copyRight {
+    box-sizing: border-box;
+    padding: 31px 657px;
+    height: 80px;
+    background: rgba(255, 255, 255, 1);
+    p,
+    a {
+      display: inline-block;
+      text-align: center;
+      height: 80px;
+      font-size: 16px;
+      font-family: PingFang-SC-Medium;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 1);
+      line-height: 80px;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+}

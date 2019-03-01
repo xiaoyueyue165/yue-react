@@ -4,8 +4,31 @@
   width: 1920px;
 }
 
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
+  /* ie67专用 */
+}
+
 .hand:hover {
   cursor: pointer;
+}
+
+/* reset */
+
+p, ul {
+  margin-bottom: 0;
+}
+
+li {
+  list-style: none;
 }
 
 /* 辅助线 */

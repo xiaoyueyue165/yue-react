@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
-import { Input, Button, Radio, Upload, Icon, message } from 'antd';
+import { Input, Button, Radio, message } from 'antd';
+import Upload from "antd/lib/upload";
 import utils from "../../utils";
 import './style.scss';
 import bigBg from '../../assets/bigBg.png';
