@@ -11,6 +11,19 @@ const isProd = process.env.NODE_ENV === "production";
 let pathsToClean = ["dist"];
 const webpackConfig = {
   entry: {
+    antd: [ //build the mostly used components into a independent chunk,avoid of total package over size.
+      'antd/lib/input',
+      'antd/lib/button',
+      'antd/lib/radio',
+      'antd/lib/message',
+      'antd/lib/checkbox',
+      'antd/lib/icon',
+      'antd/lib/menu',
+      'antd/lib/upload',
+      'antd/lib/modal',
+      'antd/lib/row',
+      'antd/lib/col'
+    ],
     "app.bundle": "./src/app.jsx",
     vendor: ["react", "react-dom"]
   },
@@ -22,6 +35,9 @@ const webpackConfig = {
     'react': 'React',
     'react-dom': 'ReactDOM',
     'react-router-dom': 'ReactRouterDOM',
+    'redux': 'Redux',
+    'react-redux': 'ReactRedux',
+    'react-router-redux': 'ReactRouterRedux',
     'moment': 'moment',
     'antd': 'antd',
     'lodash': '_'
@@ -49,6 +65,10 @@ const webpackConfig = {
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     // Webpack3 新功能: Scope Hoisting
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['antd'],
+      minChunks: Infinity
+    })
 
   ],
   module: {
@@ -116,17 +136,19 @@ const webpackConfig = {
   devtool: "source-map"
 };
 
-const ProdAddPlugins = [new BundleAnalyzerPlugin() // 生产环境，压缩混淆并移除console
-  //  FIXME: ERROR in bundle.js from UglifyJs
-  // TypeError: Cannot read property 'sections' of null
-  // new webpack.optimize.UglifyJsPlugin({
-  //   compress: {
-  //     warnings: false,
-  //     drop_console: true,
-  //     pure_funcs: ['console.log']
-  //   },
-  //   sourceMap: false
-  // })
+const ProdAddPlugins = [new BundleAnalyzerPlugin(), // 生产环境，压缩混淆并移除console
+//  FIXME:不能关闭 sourceMap
+new webpack.optimize.UglifyJsPlugin({
+  output: {
+    comments: false // remove all comments
+  },
+  compress: {
+    warnings: false,
+    drop_console: true,
+    pure_funcs: ['console.log']
+  },
+  sourceMap: true
+})
 ]
 
 isProd ?
