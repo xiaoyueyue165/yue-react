@@ -1,5 +1,5 @@
 {
-  "name": "yue-react",
+  "name": "yue-react-start",
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --history-api-fallback",

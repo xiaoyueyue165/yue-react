@@ -62,7 +62,7 @@ class register extends React.Component {
         console.log(IMgProps)
         return (
             <div className="wrapper">
-                <div className="company hand" onClick={this.toIndex.bind(this)}>首润人力资源</div>
+                <div className="company hand" onClick={this.toIndex.bind(this)}>yue-react-start/div>
                 <div className="rightState">已有账号，<span className="blue"><Link to="/signIn">立即登录</Link></span></div>
                 <img className='bigBg' src={bigBg} />
                 <div className="mainBox">

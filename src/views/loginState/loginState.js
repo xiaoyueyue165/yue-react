@@ -32,7 +32,7 @@ class loginState extends React.Component {
         function ForgetPwd_R() {
 
             return <div className="mainBox">
-                <div className="title">注册</div>
+                <div className="title">忘记密码</div>
                 <Input className="commonInp" placeholder="请输入手机号" />
                 <img className="commonIcon" src={phone} />
                 <Input className="commonInp" placeholder="请输入验证码" />
@@ -59,7 +59,7 @@ class loginState extends React.Component {
             <div className="wrapper_loginState">
                 <div className="company hand" onClick={this.toIndex.bind(this)}>首润人力资源</div>
                 <img className='bigBg' src={bigBg} />
-                {forgetPwd === '2true' ? <ForgetPwd_R /> : <Success_R />}
+                {forgetPwd === 'true' ? <ForgetPwd_R /> : <Success_R />}
             </div>
         );
     }

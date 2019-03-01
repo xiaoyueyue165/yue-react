@@ -11,28 +11,311 @@
       z-index: 1;
     }
   }
-  .Partner {
-    display: flex;
-    justify-content: center;
+  .loation {
+    position: relative;
     box-sizing: border-box;
     padding: 120px 360px;
-    height: 826px;
-    background: rgba(255, 255, 255, 1);
+    height: 880px;
+    background: #f9f9f9;
+    .up {
+      width: 1200px;
+      display: flex;
+      justify-content: center;
+      float: left;
+      height: 240px;
+    }
+    .activity_tabs {
+      width: 1200px;
+      height: 400px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .activity_item {
+        flex: 1;
+        box-sizing: border-box;
+        padding: 80px 20px;
+        width: 400px;
+        height: 400px;
+        background: rgba(255, 255, 255, 1);
+        &:hover {
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+          z-index: 2;
+          cursor: pointer;
+        }
+        .content {
+          height: 69px;
+          .title {
+            height: 23px;
+            font-size: 22px;
+            font-family: MicrosoftYaHei;
+            font-weight: bold;
+            color: rgba(51, 51, 51, 1);
+            line-height: 23px;
+          }
+          .intro {
+            height: 17px;
+            font-size: 16px;
+            font-family: MicrosoftYaHei;
+            font-weight: bold;
+            color: rgba(143, 143, 143, 1);
+            line-height: 17px;
+          }
+        }
+      }
+    }
+    h6 {
+      position: absolute;
+      left: 871px;
+      top: 225px;
+      height: 20px;
+      font-size: 20px;
+      font-family: MicrosoftYaHei;
+      font-weight: 400;
+      color: rgba(143, 143, 143, 1);
+      line-height: 20px;
+    }
     .title_box {
       position: relative;
       height: 65px;
-      width: 440px;
-
+      width: 652px;
+      .small_hui {
+        position: absolute;
+        left: 303px;
+        top: 58px;
+        width: 46px;
+        height: 6px;
+        background: rgba(143, 143, 143, 1);
+      }
       .bg {
-        width: 440px;
+        display: flex;
+        width: 652px;
         height: 65px;
-        text-align:justify;
         font-size: 84px;
         font-family: MicrosoftYaHei;
         font-weight: bold;
         color: rgba(0, 0, 0, 1);
         line-height: 65px;
         opacity: 0.12;
+        span {
+          flex: 1;
+        }
+      }
+      .title {
+        position: absolute;
+        left: 256px;
+        top: 0;
+        display: inline-block;
+        height: 32px;
+        font-size: 32px;
+        font-family: MicrosoftYaHei;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+        line-height: 32px;
+      }
+    }
+  }
+  .Product {
+    height: 630px;
+    background: rgba(23, 177, 247, 1);
+    position: relative;
+    box-sizing: border-box;
+    padding: 122px 360px;
+    .up {
+      width: 1200px;
+      display: flex;
+      justify-content: center;
+      float: left;
+      height: 240px;
+     
+    }
+    .products_list {
+      position: relative;
+      float: left;
+      display: flex;
+      width: 1200px;
+      height: 400px;
+
+      .toNext,
+      .toPrev {
+        position: absolute;
+        top: 188px;
+        left: 20px;
+        width: 14px;
+        height: 24px;
+        z-index: 3;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .toNext {
+        left: auto;
+        right: 20px;
+      }
+      .product_item {
+        position: relative;
+        box-sizing: border-box;
+        padding: 60px 56px 62px;
+        width: 400px;
+        height: 400px;
+        background: rgba(255, 255, 255, 1);
+        .small_block {
+          position: absolute;
+          left: 177px;
+          top: 169px;
+          width: 46px;
+          height: 6px;
+          background: rgba(23, 177, 247, 1);
+        }
+        .content {
+          height: 100%;
+          .title {
+            position: relative;
+            width: 75px;
+            height: 74px;
+            font-size: 64px;
+            font-family: Arial-BoldMT;
+            font-weight: bold;
+            color: rgba(231, 247, 254, 1);
+            line-height: 74px;
+            .text {
+              position: absolute;
+              bottom: 0;
+              width: 75px;
+              height: 22px;
+              font-size: 22px;
+              font-family: MicrosoftYaHei;
+              font-weight: bold;
+              color: rgba(23, 177, 247, 1);
+              line-height: 22px;
+              text-align: center;
+            }
+          }
+          .intro {
+            width: 288px;
+            height: 76px;
+            font-size: 16px;
+            font-family: MicrosoftYaHei;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 1);
+            line-height: 26px;
+          }
+        }
+      }
+    }
+    h6 {
+      position: absolute;
+      left: 811px;
+      top: 224px;
+      height: 20px;
+      font-size: 20px;
+      font-family: MicrosoftYaHei;
+      font-weight: 400;
+      color: rgba(240, 239, 239, 1);
+      line-height: 20px;
+    }
+    .title_box {
+      position: relative;
+      height: 65px;
+      width: 908px;
+      .small_hui {
+        position: absolute;
+        top: 56px;
+        left: 431px;
+        width: 46px;
+        height: 6px;
+        background: rgba(240, 239, 239, 1);
+      }
+      .bg {
+        display: flex;
+        justify-content: space-between;
+        width: 908px;
+        height: 67px;
+        font-size: 84px;
+        font-family: MicrosoftYaHei;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 1);
+        line-height: 67px;
+        opacity: 0.12;
+        span {
+          flex: 1;
+        }
+      }
+      .title {
+        position: absolute;
+        left: 384px;
+        top: 0;
+        display: inline-block;
+        height: 32px;
+        font-size: 32px;
+        font-family: MicrosoftYaHei;
+        font-weight: bold;
+        color: #ffffff;
+        line-height: 32px;
+      }
+    }
+  }
+  .fill_block {
+    background-color: #f9f9f9;
+    height: 250px;
+  }
+  .Partner {
+    position: relative;
+    box-sizing: border-box;
+    padding: 120px 360px;
+    height: 826px;
+    background: rgba(255, 255, 255, 1);
+    .up {
+      width: 1200px;
+      display: flex;
+      justify-content: center;
+      float: left;
+      height: 239px;
+    }
+    h6 {
+      position: absolute;
+      left: 811px;
+      top: 224px;
+      height: 20px;
+      font-size: 20px;
+      font-family: MicrosoftYaHei;
+      font-weight: 400;
+      color: rgba(143, 143, 143, 1);
+      line-height: 20px;
+    }
+    .company_list {
+      width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      a {
+        margin-bottom: 27px;
+      }
+    }
+    .title_box {
+      position: relative;
+      height: 65px;
+      width: 440px;
+      .small_hui {
+        position: absolute;
+        left: 197px;
+        top: 57px;
+        width: 46px;
+        height: 6px;
+        background: rgba(143, 143, 143, 1);
+      }
+      .bg {
+        display: flex;
+        width: 440px;
+        height: 65px;
+        font-size: 84px;
+        font-family: MicrosoftYaHei;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 1);
+        line-height: 65px;
+        opacity: 0.12;
+        span {
+          flex: 1;
+        }
       }
       .title {
         position: absolute;

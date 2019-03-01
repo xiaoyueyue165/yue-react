@@ -1,4 +1,4 @@
-# Ms.HR
+# yue-react-start
 
 ## useful links
 - [BEM](http://getbem.com/naming/)

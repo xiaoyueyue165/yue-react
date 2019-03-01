@@ -7,7 +7,7 @@ class head extends Component {
     render() {
         return (
             <div className="head_wrap app">
-                <div className="head_com hand">首润人力资源</div>
+                <div className="head_com hand">yue-react-start</div>
                 <div className="right_nav">
                     <Link to="/" >首页</Link>
                     <Link to="/" >我有人</Link>

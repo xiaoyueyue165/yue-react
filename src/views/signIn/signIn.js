@@ -27,7 +27,7 @@ class signIn extends Component {
       <div className="app">
         <div className="header oneLineBetween">
           <div className="login_btn hand">
-            首润人力资源
+            yue-react-start
           </div>
           <div className="guo hand" onClick={this.toHome.bind(this)}>跳过，先浏览下</div>
         </div>
@@ -39,7 +39,7 @@ class signIn extends Component {
               <div className={tabIndex === 0 ? 'tab_item active hand' : 'tab_item hand'} onClick={() => this.sendTabIndex(0)}>密码登录</div>
               <div className={tabIndex === 1 ? 'tab_item active hand' : 'tab_item hand'} onClick={() => this.sendTabIndex(1)}>验证码登录</div>
             </div>
-            <SignInTab index={tabIndex} />
+            <SignInTab index={tabIndex} phone="" />
           </div>
         </div>
         <div id="footer" className="oneLineBetween">

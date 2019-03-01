@@ -15,7 +15,7 @@ export default () => {
         <Route exact path="/signIn" component={signIn} />
         <Route path="/register" component={register} />
         <Route path="/loginState" component={loginState} />
-        <Route path="/Home" component={Home} />
+        <Route path="/home" component={Home} />
       </React.Fragment>
     </BrowserRouter>
 
