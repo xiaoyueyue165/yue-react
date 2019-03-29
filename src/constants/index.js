@@ -1,1 +1,3 @@
-export const ADD_TODO = 'ADD_TODO'
+export const REQUEST_USERINFO = 'REQUEST_USERINFO'
+export const SET_USERINFO = 'SET_USERINFO'
+export const GET_USERINFO = 'GET_USERINFO'

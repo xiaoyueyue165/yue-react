@@ -2,11 +2,11 @@ import {
     combineReducers
 } from 'redux';
 import { routerReducer } from 'react-router-redux'
-import todo from './todo';
+import User from "./user";
 
 // 合并操作
 const rootReducer = combineReducers({
-    todo,
+    User,
     routing: routerReducer
 })
 

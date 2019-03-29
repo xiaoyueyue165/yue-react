@@ -1,0 +1,85 @@
+.forgetPwd_wrap {
+  width: 1200px;
+  margin: 181px auto 262px;
+}
+.forgetPwd {
+  position: relative;
+  box-sizing: border-box;
+  padding: 160px 184px 103px 185px;
+  width: 669px;
+  height: 557px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 16px 3px rgba(23, 177, 247, 0.11);
+  border-radius: 10px;
+  z-index: 2;
+  .title {
+    position: absolute;
+    top: 86px;
+    left: 287px;
+    height: 24px;
+    font-size: 24px;
+    font-family: MicrosoftYaHei-Bold;
+    font-weight: bold;
+    color: rgba(23, 177, 247, 1);
+    line-height: 24px;
+  }
+  .Btn {
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    font-family: PingFang-SC-Regular;
+    background: rgba(23, 177, 247, 1);
+  }
+
+  .commonInp {
+    width: 300px;
+    height: 38px;
+    // border: 1px solid rgba(224, 224, 224, 1);
+    margin-bottom: 20px !important;
+    padding-left: 31px !important;
+    input {
+      position: relative;
+      margin-left: -31px;
+      padding-left: 31px !important;
+      width: 300px !important;
+    }
+  }
+  .commonIcon {
+    position: absolute;
+    left: 195px;
+    margin-top: 12px;
+  }
+
+  .sendVscode_loginState {
+    position: absolute;
+    padding-left: 19px;
+    top: 218px;
+    left: 385px;
+    display: inline;
+    width: 100px;
+    height: 38px;
+    font-size: 12px;
+    font-family: PingFang-SC-Regular;
+    font-weight: 400;
+    color: rgba(23, 177, 247, 1);
+    line-height: 38px;
+    z-index: 10;
+  }
+
+  .sendVscode_loginState:hover {
+    cursor: pointer;
+  }
+
+  .sendVscode_loginState::before {
+    position: absolute;
+    left: 0;
+    top: 13px;
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 15px;
+    border: 1px solid rgba(224, 224, 224, 1);
+  }
+}

@@ -1,0 +1,64 @@
+.ImgTextWrap {
+  .ImgTextWrap {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background: #fff;
+  }
+  .taocan2 {
+    width: 1200px;
+    margin: 0 auto;
+    .imgBox {
+      width: 1200px;
+      height: 360px;
+    }
+    .content {
+      width: 1200px;
+      overflow: hidden;
+    }
+    .name {
+      position: relative;
+      height: 112px;
+      font-size: 32px;
+      font-family: MicrosoftYaHei;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 1);
+      line-height: 112px;
+      text-align: center;
+      .CollectBox {
+        position: absolute;
+        right: 0;
+        top: 44px;
+      }
+    }
+  }
+  .onlineConcat {
+    width: 100%;
+    border-top: 1px solid rgba(221, 221, 221, 1);
+    height: 78px;
+    .innerBox {
+      width: 1200px;
+      margin: 0 auto;
+      height: 78px;
+      .concatBtn {
+        width: 114px;
+        height: 38px;
+        background: rgba(82, 196, 248, 1);
+        color: #fff;
+      }
+      .telIcon {
+        margin-top: -4px;
+      }
+      .tel_phone {
+        height: 17px;
+        font-size: 18px;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 1);
+        line-height: 17px;
+        margin-left: 20px;
+      }
+    }
+  }
+}

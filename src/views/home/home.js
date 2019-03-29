@@ -1,151 +1,105 @@
 import React, { Component } from 'react'
-import Head from "../../layouts/head/head";
-import Foot from "../../layouts/foot/foot";
-import index from "../../assets/big/index.png";
-import qrCode from "../../assets/qrCode.png";
-import hezuo from "../../assets/hezuo.png";
-import location1 from "../../assets/icon/location_1.png";
-import location2 from "../../assets/icon/location_2.png";
-import location3 from "../../assets/icon/location_3.png";
-import toPrev from "../../assets/icon/l_jianTou.png";
-import toNext from "../../assets/icon/r_jianTou.png";
+import PropTypes from 'prop-types'
+import { Head, Foot } from "../../layouts";
+import { BigAd, Loading, ConcatAd } from "../../components";
+import { fetchUserInfo } from '../../actions/user'
+import fetch from '../../utils/fetch';
+import Api from "../../utils/api";
+import location1 from "../../assets/default/icon/location_1.png";
+import location2 from "../../assets/default/icon/location_2.png";
+import location3 from "../../assets/default/icon/location_3.png";
+import toPrev from "../../assets/default/icon/l_jianTou.png";
+import toNext from "../../assets/default/icon/r_jianTou.png";
 import './style.scss'
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            panterList: [], // 合作伙伴列表
+        }
+    }
+    componentWillMount() {
+        let token = localStorage.getItem('HR_token');
+        let currentPath = this.props.match.path;
+        // 未登录 从注册页面可访问 home
+        if (token === null && currentPath === '/') {
+            this.props.history.push('/signIn')
+        } else {
+            // 对已经卸载的组件异步更新会报错
+            // this.getPanterList();
+        }
+    }
+    getPanterList() {
+        let y = this;
+        // 首页 合作伙伴推荐显示 2
+        fetch.post(`/api/${Api.panterList}`, { "paging": '2' }).then(res => {
+            console.log(res.data.response_data)
+            const data = res.data.response_data.lists
+            y.setState({
+                panterList: data
+            })
+        })
+    }
     render() {
+        const { panterList } = this.state;
+        const panterListImgs = panterList && panterList.length > 0 ? panterList.map((panter, index) => {
+            return <a className={(index + 1) % 4 == 0 ? 'mr0 imgBox' : 'imgBox'} key={panter.id}> <div className="coverImg"><img className="coverImg" style={{ backgroundImage: 'url(' + panter.company_img + ')' }} /></div></a>
+        }) : ''
         return (
             <div className="homePage">
                 <Head />
-                <div className="bigImg app">
-                    <img src={index} />
-                    <img className="index_qrCode" src={qrCode} />
-                </div>
-                <div className="loation app">
-                    <div className="up">
-                        <div className="title_box">
-                            <div className="title">平台定位</div>
-                            <span className="small_hui"></span>
-                            <div className="bg">
-                                <span>P</span>
-                                <span>O</span>
-                                <span>S</span>
-                                <span>I</span>
-                                <span>T</span>
-                                <span>I</span>
-                                <span>O</span>
-                                <span>N</span>
-                                <span>I</span>
-                                <span>N</span>
-                                <span>G</span>
+                {/* <Loading /> */}
+                {/* 大广告 */}
+                <BigAd adType={1} />
+                <ConcatAd />
+                {/* 平台定位 */}
+                <div className="response_container loation_wrap">
+                    <div className="loation app">
+                        <div className="up">
+                            <div className="title_box">
+                                <div className="title">平台定位</div>
+                                <span className="small_hui"></span>
+                                <div className="bg">
+                                    <span>P</span>
+                                    <span>O</span>
+                                    <span>S</span>
+                                    <span>I</span>
+                                    <span>T</span>
+                                    <span>I</span>
+                                    <span>O</span>
+                                    <span>N</span>
+                                    <span>I</span>
+                                    <span>N</span>
+                                    <span>G</span>
+                                </div>
                             </div>
                         </div>
                         <h6>平台的定位内容宣传</h6>
-                    </div>
-                    <div className="activity_tabs">
-                        <div className="activity_item active_tab columnBetween">
-                            <img src={location1} />
-                            <div className="content columnBetween">
-                                <div className="title">人员共享的优势</div>
-                                <div className="intro">人员贡献提供了求职就业机会</div>
-                            </div>
-                        </div>
-                        <div className="activity_item columnBetween">
-                            <img src={location2} />
-                            <div className="content columnBetween">
-                                <div className="title">人员共享的优势</div>
-                                <div className="intro">人员贡献提供了求职就业机会</div>
-                            </div>
-                        </div>
-                        <div className="activity_item columnBetween">
-                            <img src={location3} />
-                            <div className="content columnBetween">
-                                <div className="title">人员共享的优势</div>
-                                <div className="intro">人员贡献提供了求职就业机会</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div className="Product app">
-                    <div className="up">
-                        <div className="title_box">
-                            <div className="title">服务产品</div>
-                            <span className="small_hui"></span>
-                            <div className="bg">
-                                <span>S</span>
-                                <span>E</span>
-                                <span>R</span>
-                                <span>V</span>
-                                <span>I</span>
-                                <span>C</span>
-                                <span>E</span>
-                                <span></span>
-                                <span>P</span>
-                                <span>R</span>
-                                <span>O</span>
-                                <span>D</span>
-                                <span>U</span>
-                                <span>C</span>
-                                <span>T</span>
+                        <div className="activity_tabs">
+                            <div className="activity_item active_tab columnBetween">
+                                <img src={location1} />
+                                <div className="content columnBetween">
+                                    <div className="title">人员共享的优势</div>
+                                    <div className="intro">人员贡献提供了求职就业机会</div>
+                                </div>
+                            </div>
+                            <div className="activity_item columnBetween">
+                                <img src={location2} />
+                                <div className="content columnBetween">
+                                    <div className="title">HR精英俱乐部线下活动</div>
+                                    <div className="intro">人员贡献提供了求职就业机会</div>
+                                </div>
+                            </div>
+                            <div className="activity_item columnBetween">
+                                <img src={location3} />
+                                <div className="content columnBetween">
+                                    <div className="title">高端职位猎头</div>
+                                    <div className="intro">人员贡献提供了求职就业机会</div>
+                                </div>
                             </div>
                         </div>
-                        <h6>与知名行业合作给您提供优质职位</h6>
-                    </div>
-                    <div className="products_list">
-                        <img className="toNext" src={toNext} />
-                        <img className="toPrev" src={toPrev} />
-
-                        <div className="product_item">
-                            <div className="small_block"></div>
-                            <div className="content columnBetween">
-                                <div className="title">01<div className="text">我用人</div></div>
-                                <div className="intro">现阶段企业对于某一个或多个岗位用工需求不大，需要处理突发情况的用工对于某些时段</div>
-                            </div>
-                        </div>
-                        <div className="product_item">
-                            <div className="small_block"></div>
-                            <div className="content columnBetween">
-                                <div className="title">02<div className="text">我用人</div></div>
-                                <div className="intro">各企业将目前不饱和人员共享到其他企业实现成本降低，员工收入提升，大大增加了职工的稳定性和相互的粘合度</div>
-                            </div>
-                        </div>
-                        <div className="product_item">
-                            <div className="small_block"></div>
-                            <div className="content columnBetween">
-                                <div className="title">03<div className="text">我用人</div></div>
-                                <div className="intro">引入第三方平台，本平台提供了基础套餐的展示、预约、拼团等功能</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="fill_block app"></div>
-
-                <div className="Partner app">
-                    <div className="up">
-                        <div className="title_box">
-                            <div className="title">合作伙伴</div>
-                            <span className="small_hui"></span>
-                            <div className="bg">
-                                <span>P</span>
-                                <span>A</span>
-                                <span>R</span>
-                                <span>T</span>
-                                <span>N</span>
-                                <span>E</span>
-                                <span>R</span>
-                            </div>
-                        </div>
-                        <h6>与知名行业合作给您提供优质职位</h6>
-                    </div>
-                    <div className="company_list">
-                        <a> <img src={hezuo} /></a>
-                        <a> <img src={hezuo} /></a>
-                        <a> <img src={hezuo} /></a>
-                        <a> <img src={hezuo} /></a>
-                        <a> <img src={hezuo} /></a>
-                        <a> <img src={hezuo} /></a>
-                        <a> <img src={hezuo} /></a>
-                        <a> <img src={hezuo} /></a>
                     </div>
                 </div>
                 <Foot />

@@ -1,0 +1,10 @@
+.Bookmark_wrap {
+  height: 54px;
+  .bookmark_content {
+    width: 1200px;
+  }
+  // 点亮最后一个当前的导航
+  .ant-breadcrumb > span:last-child a {
+    color: #52c4f8 !important;
+  }
+}

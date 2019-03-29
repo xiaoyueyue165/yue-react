@@ -1,11 +1,13 @@
 .foot_wrap {
-    position: relative;
   height: 622px;
+  background: rgba(40, 40, 40, 1);
   .mainLinks {
+    position: relative;
     box-sizing: border-box;
-    padding: 80px 360px;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 80px 15px;
     height: 542px;
-    background: rgba(40, 40, 40, 1);
     .title {
       height: 17px;
       font-size: 18px;
@@ -52,12 +54,12 @@
     }
     .qrCode {
       position: absolute;
-      left: 1080px;
+      right: 108px;
       top: 307px;
       width: 300px;
       height: 147px;
       .code {
-          height: 100%;
+        height: 100%;
       }
       .img {
         width: 120px;
@@ -76,22 +78,30 @@
   }
   .copyRight {
     box-sizing: border-box;
-    padding: 31px 657px;
+    padding: 31px 15px;
     height: 80px;
     background: rgba(255, 255, 255, 1);
-    p,
-    a {
-      display: inline-block;
+    .innerBox {
+      width: 1200px;
+      margin: 0 auto;
       text-align: center;
-      height: 80px;
-      font-size: 16px;
-      font-family: PingFang-SC-Medium;
-      font-weight: 500;
-      color: rgba(0, 0, 0, 1);
-      line-height: 80px;
-    }
-    a {
-      text-decoration: underline;
+      p,
+      a {
+        display: inline-block;
+        text-align: center;
+        height: 80px;
+        font-size: 16px;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 1);
+        line-height: 80px;
+      }
+      a {
+        text-decoration: underline;
+      }
+      p {
+        margin-right: 30px;
+      }
     }
   }
 }

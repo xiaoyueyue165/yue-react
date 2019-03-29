@@ -1,9 +1,17 @@
+.header_border {
+  border-bottom: 1px solid rgba(238, 240, 245, 1);
+}
 .head_wrap {
-  position: relative;
+  width: 1200px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 80px;
   .head_com {
-    position: absolute;
-    left: 240px;
+    float: left;
+  }
+  .head_com a {
     height: 25px;
     font-size: 24px;
     font-family: MicrosoftYaHei-Bold;
@@ -12,10 +20,9 @@
     line-height: 80px;
   }
   .right_nav {
-    position: absolute;
+    float: left;
     display: flex;
-    justify-content: space-between;
-    left: 876px;
+    // justify-content: space-between;
     width: 714px;
     height: 80px;
     line-height: 80px;
@@ -30,11 +37,13 @@
       color: rgba(51, 51, 51, 1);
       line-height: 80px;
     }
+    .active_nav {
+      // font-weight: bold;
+      color: rgba(23, 177, 247, 1);
+    }
   }
   .head_avator {
-    position: absolute;
-    left: 1630px;
-    top: 15px;
+    float: right;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -44,4 +53,27 @@
     height: 50px;
     border-radius: 50%;
   }
+}
+.tab_a {
+  font-size: 16px;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  a {
+    font-size: 16px;
+    font-family: PingFang-SC-Regular;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+  }
+}
+.ant-dropdown-menu-item-divider {
+  position: relative;
+  margin-left: 20px;
+  width: 107px;
+  background: rgba(240, 240, 240, 1);
+}
+.ant-dropdown {
+  width: 147px;
+  left: 1533px;
+  top: 80px;
 }

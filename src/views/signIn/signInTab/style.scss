@@ -1,73 +1,81 @@
-.ant-input {
-    padding-left: 35px;
+.signInTab_tabContentBox {
+  position: relative;
+  height: 327px;
+  width: 360px;
+  box-sizing: border-box;
+  padding: 0 30px;
+  border-radius: 10px;
+  .ant-input {
     height: 38px;
     width: 300px;
     font-size: 14px;
     font-family: PingFang-SC-Regular;
     font-weight: 400;
     color: rgba(153, 153, 153, 1);
-}
-
-.tabContentBox {
-    position: relative;
-    height: 327px;
-    width: 360px;
-    box-sizing: border-box;
-    padding: 0 30px;
-}
-
-.phone {
+  }
+  input {
+    padding-left: 35px !important;
+  }
+  .phone {
     position: absolute;
     top: 42px;
-}
+  }
 
-.phone_icon {
+  .phone_icon {
     position: absolute;
     top: 52px;
     left: 40px;
-}
+  }
 
-.pwd {
+  .pwd {
     position: absolute;
     top: 98px;
-}
+  }
+  .pwd_wrap {
+    width: 300px;
+    height: 38px;
+    .pwd {
+      width: 300px !important;
+    }
+  }
 
-.vcode {
+  .vcode {
     position: absolute;
     top: 113px;
-}
+  }
 
-.icon_pwd {
+  .icon_pwd {
     position: absolute;
     top: 108px;
-}
+  }
 
-.icon_vcode {
+  .icon_vcode {
     position: absolute;
     top: 124px;
     left: 38px;
-}
+  }
 
-.checkBox {
+  .checkBox {
     position: absolute;
     left: 30px;
     top: 147px;
-}
+  }
 
-.loginBtn, .loginBtn2 {
+  .loginBtn,
+  .loginBtn2 {
     position: absolute;
     top: 193px;
     width: 300px;
     height: 40px;
     background: rgba(23, 177, 247, 1);
     border-radius: 4px;
-}
+  }
 
-.loginBtn2 {
+  .loginBtn2 {
     top: 201px !important;
-}
+  }
 
-.tishi {
+  .tishi {
     position: absolute;
     padding: 0 30px;
     bottom: 71px;
@@ -78,9 +86,9 @@
     font-weight: 400;
     color: rgba(153, 153, 153, 1);
     line-height: 12px;
-}
+  }
 
-.phone_toast {
+  .phone_toast {
     position: absolute;
     top: 91px;
     right: 30px;
@@ -91,9 +99,9 @@
     font-weight: 400;
     color: rgba(252, 108, 56, 1);
     line-height: 12px;
-}
+  }
 
-.sendVscode {
+  .sendVscode {
     position: absolute;
     padding-left: 19px;
     left: 230px;
@@ -106,13 +114,13 @@
     font-weight: 400;
     color: rgba(23, 177, 247, 1);
     line-height: 38px;
-}
+  }
 
-.sendVscode:hover {
+  .sendVscode:hover {
     cursor: pointer;
-}
+  }
 
-.sendVscode::before {
+  .sendVscode::before {
     position: absolute;
     left: 0;
     top: 13px;
@@ -121,10 +129,11 @@
     width: 1px;
     height: 15px;
     border: 1px solid rgba(224, 224, 224, 1);
-}
-.blue a {
-    color: #17B1F7 !important;
-}
-.blue:hover {
+  }
+  .blue a {
+    color: #17b1f7 !important;
+  }
+  .blue:hover {
     cursor: pointer;
+  }
 }

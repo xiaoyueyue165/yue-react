@@ -8,28 +8,34 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 const config = require("./config");
 const isProd = process.env.NODE_ENV === "production";
 
-let pathsToClean = ["dist"];
+let pathsToClean = [];
 const webpackConfig = {
   entry: {
     antd: [ //build the mostly used components into a independent chunk,avoid of total package over size.
       'antd/lib/input',
+      'antd/lib/form',
+      'antd/lib/date-picker',
+      'antd/lib/pagination',
+      'antd/lib/breadcrumb',
+      'antd/lib/carousel',
       'antd/lib/button',
+      'antd/lib/select',
+      'antd/lib/checkbox',
       'antd/lib/radio',
       'antd/lib/message',
-      'antd/lib/checkbox',
+      'antd/lib/notification',
       'antd/lib/icon',
-      'antd/lib/menu',
+      'antd/lib/input-number',
       'antd/lib/upload',
       'antd/lib/modal',
-      'antd/lib/row',
-      'antd/lib/col'
     ],
     "app.bundle": "./src/app.jsx",
     vendor: ["react", "react-dom"]
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: '[name].[hash].js'
+    path: path.resolve(__dirname, "../"),
+    filename: '[name].[hash].js',
+    publicPath: '/'
   },
   externals: {
     'react': 'React',
@@ -56,8 +62,8 @@ const webpackConfig = {
     // new webpack.DefinePlugin({
     //   'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     // }),
-    // clearn dist
-    new CleanWebpackPlugin(pathsToClean),
+    // clearn dist 先不删除
+    // new CleanWebpackPlugin(pathsToClean),
     // 热加载
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
@@ -110,12 +116,7 @@ const webpackConfig = {
       {
         test: /\.js[x]?$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["es2015", "react"]
-          }
-        }
+        loader: 'babel-loader?presets[]=react,presets[]=es2015,presets[]=stage-0'
       },
       {
         test: /\.css$/,
@@ -129,7 +130,15 @@ const webpackConfig = {
     ]
   },
   devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://shourun.test01.qcw100.com',
+        pathRewrite: { '^/api': '' },
+        changeOrigin: true     // target是域名的话，跨域需要这个参数，
+      },
+    },
     port: config.port,
+    progress: true,
     open: true,
     hot: true
   },

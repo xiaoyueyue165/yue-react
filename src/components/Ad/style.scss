@@ -1,0 +1,110 @@
+// 小广告
+.adImgW100 {
+  width: 100%;
+  height: 120px;
+  .ad_img_wrap {
+    width: 1200px;
+    height: 120px;
+    background: rgba(246, 246, 248, 1);
+    .ant-carousel .slick-slide {
+      text-align: center;
+      height: 120px;
+      line-height: 120px;
+      background: #364d79;
+      overflow: hidden;
+    }
+
+    .ant-carousel .slick-slide h3 {
+      color: #fff;
+    }
+    img {
+      width: 1200px;
+      height: 120px;
+    }
+  }
+  .nodata {
+    width: 1200px;
+    height: 120px;
+    z-index: 1;
+  }
+}
+// 大广告
+.bigAd_Wrap {
+  height: 640px;
+  .main-img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+// 首页在线咨询弹框
+.Concat_Ad {
+  position: fixed;
+  right: 0;
+  width: 202px;
+  height: 210px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  .title {
+    // TODO:样式继续
+    width: 201px;
+    height: 60px;
+    font-size: 16px;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    background: #282828;
+    color: #fff;
+    line-height: 60px;
+    box-sizing: border-box;
+    padding-left: 22px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .onlineCusConcat {
+    width: 201px;
+    height: 50px;
+    background: #e3e2e2;
+    font-size: 16px;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    line-height: 50px;
+    box-sizing: border-box;
+    padding-left: 61px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .phoneContent {
+    width: 201px;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 15px 0 23px 21px;
+    font-size: 20px;
+    font-family: PingFang-SC-Medium;
+    font-weight: 500;
+    color: rgba(114, 114, 114, 1);
+    .text {
+      height: 23px;
+      font-size: 16px;
+      font-family: PingFang-SC-Medium;
+      font-weight: 500;
+      color: rgba(114, 114, 114, 1);
+      line-height: 23px;
+    }
+    .phone {
+      height: 16px;
+      font-size: 20px;
+      font-family: PingFang-SC-Medium;
+      font-weight: 500;
+      color: rgba(114, 114, 114, 1);
+      line-height: 16px;
+    }
+  }
+}

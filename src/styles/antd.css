@@ -1,0 +1,34 @@
+/* 全局不适用的 antd样式修改 */
+.ant-breadcrumb > span:last-child {
+  color: #52c4f8;
+}
+.ant-calendar-picker-icon:after {
+  display: none !important;
+}
+.ant-calendar-range-picker-separator {
+  display: inline-block;
+  width: 10px;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.45);
+  vertical-align: middle;
+}
+.ant-input {
+  padding-left: 15px !important;
+}
+.ant-form-item {
+  margin-bottom: 0 !important;
+}
+.ant-input {
+  margin-bottom: 0 !important;
+}
+/* select 的默认 placeholder宽度不够显示 */
+.ant-select-selection {
+  width: 120px;
+}
+/* ant分页图标左右翻页两个图标 */
+.ant-pagination-item-link::after {
+  display: none !important;
+}
+.ant-modal-close-x i {
+  display: none;
+}
