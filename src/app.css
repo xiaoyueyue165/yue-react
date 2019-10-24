@@ -16,7 +16,7 @@ body {
   width: 100%;
 }
 .clearfix:after {
-  content: "";
+  content: '';
   display: block;
   height: 0;
   clear: both;

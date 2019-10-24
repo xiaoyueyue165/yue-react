@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "extends": "airbnb-base",
   "env": {
     "browser": true
@@ -12,6 +13,7 @@
   },
   "rules": {
     "semi": 2,
+    "camelcase": 0,
     "class-methods-use-this": "off",
     "no-unused-vars": 0,
     "import/prefer-default-export": 0,

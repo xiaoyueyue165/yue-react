@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import SignInTab from "./signInTab/signInTab";
+import React, { Component } from 'react';
+import SignInTab from './signInTab/signInTab';
 import signIn_img from '../../assets/default/signIn_img.png';
 import time from '../../assets/default/icon/signIn_tab1.png';
 import pwd from '../../assets/default/icon/signIn_tab2.png';
@@ -8,17 +8,19 @@ import './style.scss';
 class SignIn extends Component {
   constructor() {
     super();
-    this.state = ({
-      tab: 0
-    })
+    this.state = {
+      tab: 0,
+    };
   }
+
   toHome() {
     this.props.history.push('/home');
   }
+
   sendTabIndex(index) {
     this.setState({
-      tab: index
-    })
+      tab: index,
+    });
   }
 
   render() {
@@ -27,19 +29,32 @@ class SignIn extends Component {
       <div className="SignPage app">
         <div className="header_wrap">
           <div className="header oneLineBetween">
-            <div className="login_btn hand">
-              Yue's react project shell
-          </div>
-            <div className="guo hand" onClick={this.toHome.bind(this)}>跳过，先浏览下</div>
+            <div className="login_btn hand">Yue's react project shell</div>
+            <div className="guo hand" onClick={this.toHome.bind(this)}>
+              跳过，先浏览下
+            </div>
           </div>
         </div>
         <div className="bigBg_box">
           <img className="signIn_img" src={signIn_img}></img>
           <div className="card-container">
-
             <div className="tabNav">
-              <div className={tabIndex === 0 ? 'tab_item active hand' : 'tab_item hand'} onClick={() => this.sendTabIndex(0)}>密码登录</div>
-              <div className={tabIndex === 1 ? 'tab_item active hand' : 'tab_item hand'} onClick={() => this.sendTabIndex(1)}>验证码登录</div>
+              <div
+                className={
+                  tabIndex === 0 ? 'tab_item active hand' : 'tab_item hand'
+                }
+                onClick={() => this.sendTabIndex(0)}
+              >
+                密码登录
+              </div>
+              <div
+                className={
+                  tabIndex === 1 ? 'tab_item active hand' : 'tab_item hand'
+                }
+                onClick={() => this.sendTabIndex(1)}
+              >
+                验证码登录
+              </div>
             </div>
             <SignInTab index={tabIndex} phone="" />
           </div>
@@ -76,11 +91,9 @@ class SignIn extends Component {
             </div>
           </div>
         </div>
-
-      </div >
+      </div>
     );
   }
 }
 
 export default SignIn;
-

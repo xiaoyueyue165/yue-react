@@ -1,18 +1,18 @@
-
-import React from "react";
-import { BrowserRouter, Route, Switch, Redirect, HashRouter } from "react-router-dom";
+import React from 'react';
 import {
-  SignIn,
-  LoginControl,
-  Home,
-  NoMatch,
-} from "./views";
-import ScrollToTop from "./utils/ScrollToTop";
+  BrowserRouter,
+  Route,
+  Switch,
+  Redirect,
+  HashRouter,
+} from 'react-router-dom';
+import { SignIn, LoginControl, Home, NoMatch } from './views';
+import ScrollToTop from './utils/ScrollToTop';
 
 export default class Router extends React.Component {
   componentWillMount() {
     window.yueGlobal = {
-      assests_path: "../../assets/"
+      assests_path: '../../assets/',
     };
   }
   render() {
@@ -28,11 +28,10 @@ export default class Router extends React.Component {
             <Route path="/home" component={Home} />
             {/* 404 */}
             <Route path="/404" component={NoMatch} />
-            <Route path="*" render={() => (<Redirect to="/404" />)} />
+            <Route path="*" render={() => <Redirect to="/404" />} />
           </Switch>
         </ScrollToTop>
       </BrowserRouter>
-
     );
   }
-};
+}
