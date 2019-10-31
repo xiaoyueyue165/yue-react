@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Select } from 'antd';
+import { Select, message } from 'antd';
 import fetch from '../../utils/fetch';
 import API from '../../utils/api';
 
@@ -14,7 +14,7 @@ class AccountType extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this._getAccountType();
   }
 
@@ -83,7 +83,7 @@ class AccountType extends Component {
       );
     }
 
-    return <React.Fragment>{children}</React.Fragment>;
+    return <>{children}</>;
   }
 }
 

@@ -18,7 +18,7 @@ class Pager extends Component {
       return '';
     }
     return (
-      <React.Fragment>
+      <>
         <Pagination
           className="page center"
           showSizeChanger
@@ -28,7 +28,7 @@ class Pager extends Component {
           pageSize={pageSize}
           total={total}
         />
-      </React.Fragment>
+      </>
     );
   }
 }

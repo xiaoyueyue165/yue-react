@@ -1,3 +1,4 @@
+import React from 'react';
 import { Head, Foot } from '../../layouts';
 import './style.scss';
 

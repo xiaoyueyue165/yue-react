@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb-base",
+  "extends": "eslint-config-airbnb",
   "env": {
     "browser": true
   },
@@ -11,6 +11,7 @@
       "jsx": true
     }
   },
+  "plugins": ["react"],
   "rules": {
     "semi": 2,
     "camelcase": 0,
@@ -18,6 +19,26 @@
     "no-unused-vars": 0,
     "import/prefer-default-export": 0,
     "no-unused-expressions": 0,
-    "no-case-declarations": 0
+    "no-case-declarations": 0,
+    "no-underscore-dangle": 0,
+    "no-param-reassign": 0,
+    "no-useless-concat": 0,
+    "import/no-cycle": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/destructuring-assignment": 0,
+    "react/jsx-no-bind": 0, // 123
+    "react/prop-types": 0,
+    "react/no-unused-state": 1,
+    "react/no-unused-prop-types": 1,
+    "react/sort-comp": 1,
+    "react/require-default-props": 1,
+    "jsx-a11y/alt-text": 1,
+    "react/jsx-props-no-spreading": 0,
+    "react/static-property-placement": 1,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 1,
+    "jsx-a11y/anchor-is-valid": 1,
+    "react/no-unescaped-entities": 0
   }
 }

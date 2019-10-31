@@ -14,13 +14,10 @@ class SignInTab extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tabIndex: '',
       // 密码登录
-      vcode: '',
       phone: '',
       phone2: '',
       error_msg: '', // 验证码错误提示
-      autoLogin: false,
     };
   }
 

@@ -17,7 +17,7 @@ class BigAd extends Component {
     adType: PropTypes.number.isRequired,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     // 类型(1首页,2简历库,3职位库,4企业服务,5HR精英俱乐部,6合作伙伴,7关于我们)
     this._getAdOnlineUrl(this.props.adType);
   }
@@ -48,7 +48,7 @@ class BigAd extends Component {
                   <div
                     className="main-img"
                     style={{ backgroundImage: `url(${item.img_url})` }}
-                  ></div>
+                  />
                   {/* <img className="index_qrCode" src={qrCode} /> */}
                 </a>
               </div>

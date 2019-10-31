@@ -36,7 +36,7 @@ class SignIn extends Component {
           </div>
         </div>
         <div className="bigBg_box">
-          <img className="signIn_img" src={signIn_img}></img>
+          <img className="signIn_img" src={signIn_img} />
           <div className="card-container">
             <div className="tabNav">
               <div

@@ -27,7 +27,7 @@ class Sex extends Component {
     // console.log("nextProps", nextProps);
 
     return !!(
-      nextState.ageRange || nextProps.defaultSex != this.props.defaultSex
+      nextState.ageRange || nextProps.defaultSex !== this.props.defaultSex
     );
   }
 
@@ -51,21 +51,16 @@ class Sex extends Component {
     switch (key) {
       case '1':
         return '18-25';
-        break;
       case '2':
         return '25-30';
-        break;
       case '3':
         return '30-35';
-        break;
       case '4':
         return '35-40';
-        break;
       case '':
         return '35-40';
-        break;
       default:
-        break;
+        return '没有匹配项';
     }
   };
 
@@ -137,7 +132,7 @@ class Sex extends Component {
         </Option>
       </Select>
     );
-    return <React.Fragment>{defaultSex === '1' ? man : woman}</React.Fragment>;
+    return <>{defaultSex === '1' ? man : woman}</>;
   }
 }
 

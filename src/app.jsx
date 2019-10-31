@@ -13,7 +13,7 @@ import 'moment/locale/zh-cn';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import logger from 'redux-logger';
 import rootReducer from './reducers';
-import RouterControl from './router.jsx';
+import RouterControl from './router';
 import './styles/reset.css';
 import './styles/flex.css';
 import './styles/media.css';

@@ -34,7 +34,7 @@ class Sex extends Component {
     const { changeSex } = this.state;
     const { defaultSex } = this.props;
     return (
-      <React.Fragment>
+      <>
         <RadioGroup
           className={this.props.className}
           onChange={this.onChangeSex}
@@ -45,7 +45,7 @@ class Sex extends Component {
           </Radio>
           <Radio value="2">女</Radio>
         </RadioGroup>
-      </React.Fragment>
+      </>
     );
   }
 }

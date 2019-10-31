@@ -20,7 +20,7 @@ class Home extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const token = localStorage.getItem('HR_token');
     const currentPath = this.props.match.path;
     // 未登录 从注册页面可访问 home
@@ -78,7 +78,7 @@ class Home extends Component {
             <div className="up">
               <div className="title_box">
                 <div className="title">平台定位</div>
-                <span className="small_hui"></span>
+                <span className="small_hui" />
                 <div className="bg">
                   <span>P</span>
                   <span>O</span>

@@ -20,7 +20,7 @@ class head extends Component {
     fetchUserInfo: PropTypes.func.isRequired,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const token = Storage.getLocal('Yue_token');
     this.setState({
       token,
@@ -30,10 +30,8 @@ class head extends Component {
     }
   }
 
-  componentDidMount() {}
-
   shouldComponentUpdate(nextProps, nextStates) {
-    return nextStates.token ? true : true;
+    return nextStates.token || false;
   }
 
   // 点亮导航栏文字
@@ -43,7 +41,7 @@ class head extends Component {
     if (navLocation === '/home' && locationStr === '/') {
       return true;
     }
-    return locationStr.indexOf(navLocation) != -1;
+    return locationStr.indexOf(navLocation) !== -1;
   };
 
   /**

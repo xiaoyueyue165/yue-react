@@ -9,12 +9,7 @@ import {
 import { SignIn, LoginControl, Home, NoMatch } from './views';
 import ScrollToTop from './utils/ScrollToTop';
 
-export default class Router extends React.Component {
-  componentWillMount() {
-    window.yueGlobal = {
-      assests_path: '../../assets/',
-    };
-  }
+export default class Router extends React.PureComponent {
   render() {
     return (
       <BrowserRouter>

@@ -1,13 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { Input, Button, message, Form, notification } from 'antd';
 import { Sex, UploadImg, Agreement } from '../../../components';
 import fetch from '../../../utils/fetch';
 import API from '../../../utils/api';
 import Utils from '../../../utils';
 import './style.scss';
-import camera from '../../../assets/default/icon/camera.png';
 
 class register_withForm extends React.Component {
   constructor(props) {
@@ -21,7 +18,7 @@ class register_withForm extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // this._getSuccessContent();
   }
 
@@ -60,7 +57,7 @@ class register_withForm extends React.Component {
         message.error('请您上传必要的图片信息！');
         return;
       }
-      if (pwd != pwd2) {
+      if (pwd !== pwd2) {
         message.error('两次输入的密码不一致');
         return;
       }
@@ -330,7 +327,7 @@ class register_withForm extends React.Component {
     );
     //   FIXME:style 样式问题 暂时 register_mainBox_Toast =》  padding-top: 40%;
     return successShowToast ? (
-      <div className="register_mainBox_Toast"></div>
+      <div className="register_mainBox_Toast" />
     ) : (
       <div className="register_mainBox center"> {RegisterForm}</div>
     );

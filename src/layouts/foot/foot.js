@@ -13,7 +13,7 @@ class Foot extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // this._getSiteMsg();
     // this._getFriendShipLinks();
   }
@@ -64,16 +64,16 @@ class Foot extends Component {
                 ))
               : 'loading...'}
           </ul>
-          <div className="line"></div>
+          <div className="line" />
           {siteMsg ? (
-            <React.Fragment>
+            <>
               <div className="com">
                 <div className="row">{siteMsg.company_name}</div>
                 <div className="row">{siteMsg.company_address}</div>
                 <div className="row">{siteMsg.company_phone}</div>
                 <div className="row">{siteMsg.company_email}</div>
               </div>
-            </React.Fragment>
+            </>
           ) : (
             'loading...'
           )}

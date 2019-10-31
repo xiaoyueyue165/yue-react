@@ -1,8 +1,7 @@
+import React from 'react';
 import { Breadcrumb } from 'antd';
 import { withRouter, Link } from 'react-router-dom';
-
 import './style.scss';
-import PropTypes from 'prop-types';
 
 const Bookmark = withRouter(props => {
   //    面包屑展示路由数据
@@ -37,9 +36,5 @@ const Bookmark = withRouter(props => {
     </div>
   );
 });
-
-Bookmark.propTypes = {
-  routes: PropTypes.object,
-};
 
 export default Bookmark;

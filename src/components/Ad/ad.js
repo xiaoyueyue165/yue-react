@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Carousel } from 'antd';
+import { Carousel, message } from 'antd';
 import PropTypes from 'prop-types';
 import { Loading } from '..';
 import fetch from '../../utils/fetch';
@@ -7,6 +7,10 @@ import API from '../../utils/api';
 import './style.scss';
 
 class Ad extends Component {
+  static propTypes = {
+    adType: PropTypes.number.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -14,11 +18,7 @@ class Ad extends Component {
     };
   }
 
-  static propTypes = {
-    adType: PropTypes.number.isRequired,
-  };
-
-  componentWillMount() {
+  componentDidMount() {
     // 类型(1首页,2简历库,3职位库,4企业服务,5HR精英俱乐部,6合作伙伴,7关于我们)
     this._getAdOnlineUrl(this.props.adType);
   }
@@ -51,7 +51,7 @@ class Ad extends Component {
                 ))
               : ''}
           </Carousel>
-          {Ads.length == 0 ? <Loading className="class_YY" /> : ''}
+          {Ads.length === 0 ? <Loading className="class_YY" /> : ''}
         </div>
       </div>
     );

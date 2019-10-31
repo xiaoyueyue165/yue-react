@@ -14,7 +14,7 @@ class Agreement extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
       ...this.props,
     });
@@ -26,9 +26,9 @@ class Agreement extends Component {
    */
   onChangeXieyi = e => {
     if (e.target.nodeName !== 'SPAN') {
-      this.setState({
-        checked: !this.state.checked,
-      });
+      this.setState(prevState => ({
+        checked: !prevState.checked,
+      }));
       // 传递
       this.props.onPubXieYiState(!this.state.checked);
     }

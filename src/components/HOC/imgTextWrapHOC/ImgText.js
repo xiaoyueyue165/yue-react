@@ -7,7 +7,7 @@ import Storage from '../../../utils/storage';
 import './style.scss';
 
 class ImgText extends Component {
-  componentWillMount() {
+  componentDidMount() {
     if (this.props.id) {
       Storage.setLocal('ImgTextProps', this.props);
     }
@@ -15,7 +15,7 @@ class ImgText extends Component {
 
   render() {
     // showCollect props.showCollect === false 不显示收藏按钮
-    const { id, name, type, content, isCollect } =
+    const { id, name, type, content, isCollect, Tel } =
       this.props && this.props.id
         ? this.props
         : JSON.parse(Storage.getLocal('ImgTextProps'));
@@ -24,15 +24,12 @@ class ImgText extends Component {
         <div className="taocan2">
           <div className="name">{name}</div>
           <div className="imgText">
-            {/* <div className="imgBox">
-                            <img className="coverImg" style={{ marginBottom: '19px' }} src={Jieshao} />
-                        </div> */}
             <div />
             <div
               style={{ marginBottom: '59px' }}
               className="content"
               dangerouslySetInnerHTML={{ __html: Utils.escape2Html(content) }}
-            ></div>
+            />
           </div>
         </div>
 

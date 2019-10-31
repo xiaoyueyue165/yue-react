@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Select } from 'antd';
+import { Select, message } from 'antd';
 import fetch from '../../utils/fetch';
 import API from '../../utils/api';
 
@@ -19,7 +19,7 @@ class Address extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this._getAddress(null, 'provinceArr');
   }
 
@@ -115,6 +115,7 @@ class Address extends Component {
         valus.defaultValue = placeholderShow[key];
         return valus;
       }
+      return valus;
     };
     const styles = {
       width: 120,
@@ -141,11 +142,11 @@ class Address extends Component {
 
     const noData = (
       <Select>
-        <Option></Option>{' '}
+        <Option />{' '}
       </Select>
     );
     return (
-      <React.Fragment>
+      <>
         {provinceArr_children}
         {/* 选择市 */}
         {cityArr ? (
@@ -201,7 +202,7 @@ class Address extends Component {
         ) : (
           noData
         )}
-      </React.Fragment>
+      </>
     );
   }
 }

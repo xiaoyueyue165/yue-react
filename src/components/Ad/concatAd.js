@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Animated from 'animated/lib/targets/react-dom';
 import './style.scss';
 
 class ConcatAd extends Component {
-  state = {
-    anim_Top: new Animated.Value(0),
-    top_first: '', // 首次加载广告距离顶部高度
-  };
+  constructor() {
+    super();
+    this.state = {
+      anim_Top: new Animated.Value(0),
+      top_first: '', // 首次加载广告距离顶部高度
+    };
+  }
 
   componentDidMount() {
     const ad_height = 210;
     const view_height = window.innerHeight;
     // console.log(this.Ad);
-    const top_first = parseInt((view_height - ad_height) / 2); // 计算top
+    const top_first = parseInt((view_height - ad_height) / 2, 10); // 计算top
     this.setState({
       top_first,
     });
@@ -34,7 +36,7 @@ class ConcatAd extends Component {
         Animated.spring(that.state.anim_Top, {
           toValue: top_first + 100,
         }).start();
-      } else if (NowScollTop == 0) {
+      } else if (NowScollTop === 0) {
         Animated.spring(that.state.anim_Top, {
           toValue: top_first + 500,
         }).start();

@@ -63,7 +63,7 @@ class ForgetPwd extends React.Component {
       message.error('手机号码输入有误！');
       return;
     }
-    if (password != password2) {
+    if (password !== password2) {
       message.error('两次输入的密码不一致');
     }
     fetch.post(`/api/${API.forgetPwd}`, param).then(res => {

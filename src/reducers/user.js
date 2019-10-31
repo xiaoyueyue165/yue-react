@@ -12,7 +12,6 @@ const UserInfoReducer = (state = initUserInfo, actions) => {
       };
     case SET_USERINFO:
       return { ...actions.user };
-      break;
     case GET_USERINFO:
       return initUserInfo;
     default:
